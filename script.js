@@ -79,3 +79,30 @@ firstPageAnim();
 // teeno element ko select karo ,uske baad teeno pr mousemover lagao,jb mousemove ho to ye pata karo ki mouse kaha par hai ,jiska mtlab hai
 // ki mouse ki x and y position pata karo,ab mouse ki x and y position ke badle us image ko show karo and us image ko move karo,move krte waqt
 // rotate karo and jaise jaise mouse tej chale waise waise rotation bhi tej ho jaye
+
+
+document.querySelectorAll(".elem").forEach(function (elem) {
+    var rotate = 0;
+    var diffrot = 0;
+
+    elem.addEventListener("mouseleave", function (dets) {
+
+        gsap.to(elem.querySelector("img"), {
+            opacity: 0,
+            ease: "Power3.out",
+            duration: 0.5,
+        });
+    });
+    elem.addEventListener("mousemove", function (dets) {
+        var diff = dets.clientY - elem.getBoundingClientRect().top;
+        diffrot = dets.clientX - rotate;
+        rotate = dets.clientX;
+        gsap.to(elem.querySelector("img"), {
+            opacity: 1,
+            ease: "Power3.out",
+            top: diff,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-20, 20, diffrot * 0.6),
+        });
+    });
+});
