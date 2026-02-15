@@ -118,7 +118,9 @@ html,body{
     width: 100%;
     height: 100vh;
 }
-.elem{
+
+.elem {
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
@@ -128,18 +130,25 @@ html,body{
     padding-right: 0;
     border: 1px solid #888;
 }
-.elem h1{
+
+.elem h1 {
     text-transform: uppercase;
     font-size: 7vw;
     opacity: .7;
 }
-.elemlast{
+
+.elemlast {
     border-bottom: 1px solid #888;
 }
-.elem img{
+
+.elem img {
     /* opacity: 0; */
-    display: none;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
     height: 140%;
+    width: 200px;
     z-index: 999;
     position: absolute;
 }
