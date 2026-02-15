@@ -75,3 +75,7 @@ function circleMouseFollower(xscale,yscale) {
 
 circleMouseFollower();
 firstPageAnim();
+
+// teeno element ko select karo ,uske baad teeno pr mousemover lagao,jb mousemove ho to ye pata karo ki mouse kaha par hai ,jiska mtlab hai
+// ki mouse ki x and y position pata karo,ab mouse ki x and y position ke badle us image ko show karo and us image ko move karo,move krte waqt
+// rotate karo and jaise jaise mouse tej chale waise waise rotation bhi tej ho jaye
